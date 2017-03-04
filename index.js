@@ -10,9 +10,13 @@ const checkIfEmojiDomainIsAvailable = emoji => {
   };
 
   request.post(options, (error, response, body) => {
-    if (error) { console.log('error: ', error); return; }
+    if (error) {
+      console.log(`Error checking ${emoji} .ws domain`);
+      return;
+    }
+
     if (body.toLowerCase().includes('congratulations')) {
-      console.log(`${emoji}  .ws`);
+      console.log(`${emoji} .ws is available`);
     }
   });
 };
