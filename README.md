@@ -1,5 +1,3 @@
-# Check available emoji domains
-
 <p align="center">
   <img src="demo.png" width="250" alt="Logo"/>
 </p>
