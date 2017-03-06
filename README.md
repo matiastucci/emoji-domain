@@ -12,7 +12,7 @@ $ npm start
 
 ## 🕵️ Registering domains
 * (Paid) `.ws`: [❤️❤️❤️.ws](http://❤️❤️❤️.ws)
-* (Free) `.tk | .ml | .ga | .cf | .gq`: http://www.freenom.com
+* (Free) `.tk | .ml | .ga | .cf | .gq`: http://www.freenom.com (you'll need to [convert it to Punycode](https://www.punycoder.com))
 
 ## 👌 Examples
 * [🇦🇷.tk](http://🇦🇷.tk)
