@@ -2,6 +2,15 @@ const request = require('request')
 const emojis = require('emojis-list')
 const punycode = require('punycode')
 
+function isJson(str) {
+try {
+    JSON.parse(str);
+} catch (e) {
+    return false;
+}
+return true;
+}
+
 const checkIfWSDomainIsAvailable = emoji => {
   const url = 'http://samoanic.ws/whois.dhtml'
   const options = {
@@ -34,13 +43,16 @@ const checkIfDomainsAreAvailable = emoji => {
       return
     }
 
-    const bodyObj = JSON.parse(body)
+    if(isJson(body)) {
+      const bodyObj = JSON.parse(body)
+      bodyObj.free_domains.forEach(domain => {
+        if (domain.status === 'AVAILABLE') {
+          console.log(`${emoji} ${domain.tld} is available`)
+        }
+      })
+    }
 
-    bodyObj.free_domains.forEach(domain => {
-      if (domain.status === 'AVAILABLE') {
-        console.log(`${emoji} ${domain.tld} is available`)
-      }
-    })
+
   })
 }
 
